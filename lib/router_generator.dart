@@ -15,6 +15,8 @@ import 'models/producer_model.dart';
 
 class RouterGenerator{
   static Route<dynamic> generateRoute(RouteSettings settings){
+    List<Producer> Producers = [];
+    List<Package> Packages = [];
 
     var args = settings.arguments;
     switch(settings.name){
@@ -31,14 +33,14 @@ class RouterGenerator{
       case 'payment':
         return MaterialPageRoute(builder: (_) => PaymentScreen());
       case 'producer':
-        for(args in Producer) {
+        for(args in Producers) {
           MaterialPageRoute(builder: (_) => ProducerDetailsScreen(
           producer: args
           ));
         }
         return _errorRoute();
        case 'package-details':
-          for(args in Package) {
+          for(args in Packages) {
             return MaterialPageRoute(builder: (_) => PackageDetailsScreen(
                 package: args
           ));

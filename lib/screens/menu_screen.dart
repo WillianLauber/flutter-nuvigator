@@ -34,47 +34,31 @@ class MenuScreen extends StatelessWidget {
               OrgsMenuCard(
                 text: 'Início',
                 icon: Icons.home,
-                action: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomeScreen()),
-                ),
+                action: () => Navigator.pushNamed(context, "home")
               ),
               Divider(),
               OrgsMenuCard(
                 text: 'Favoritos',
                 icon: Icons.favorite,
-                action: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => FavoritesScreen()),
-                ),
+                action: () => Navigator.pushNamed(context, "favorites")
               ),
               Divider(),
               OrgsMenuCard(
                 text: 'Perfil',
                 icon: Icons.person,
-                action: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ProfileScreen()),
-                ),
+                action: () => Navigator.pushNamed(context, "profile")
               ),
               Divider(),
               OrgsMenuCard(
                 text: 'Métodos de pagamento',
                 icon: Icons.credit_card,
-                action: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => PaymentScreen()),
-                ),
+                action: () => Navigator.pushNamed(context, "payment")
               ),
               Divider(),
               OrgsMenuCard(
                 text: 'Sair',
                 icon: Icons.logout,
-                action: () => Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()),
-                  (route) => false
-                ),
+                action: () => Navigator.pushNamedAndRemoveUntil(context, "login", (route) => false)
               ),
               SizedBox(height: 30),
             ],

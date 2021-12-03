@@ -60,10 +60,7 @@ class LoginScreen extends StatelessWidget {
                     width: double.infinity
                 ),
                 child: ElevatedButton(
-                  onPressed: () =>Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()),
-                  ),
+                  onPressed: () =>Navigator.pushNamed(context, "home"),
                   style: ElevatedButton.styleFrom(
                     primary: AppColors.green, // background
                     onPrimary: Colors.white, // foreground
@@ -80,11 +77,7 @@ class LoginScreen extends StatelessWidget {
               ),
               child: GestureDetector(
                 onTap: () async {
-                   Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(builder: (context) => SingupScreen()),
-                    (route) => false
-                  );
+                   Navigator.pushNamedAndRemoveUntil(context, "sing-up", (route) => false);
                 },
                 child: Container(
                   width: double.maxFinite,
